@@ -30,7 +30,7 @@ tour_de_jeu = 1							# variable qui compte le nombre de tour
 
 win = ["A","B","C","D","E","F","G","H","I"]			# tableau avec 9 items différents
 
-while tour_de_jeu < 10 						# tant que le nombre de tour < 10 on repète
+while tour_de_jeu < 11						# tant que le nombre de tour < 10 on repète
 
 puts "*** % $ § % € MORPION € % § $ % *** " 			# titre du jeu
 
@@ -95,6 +95,8 @@ puts "*** % $ § % € MORPION € % § $ % *** " 			# titre du jeu
 	  end
       end
     end
+  else
+    tour_de_jeu = tour_de_jeu + 1
   end
 
   if win[1] == win[2] && win[3] == win[1]			# condition alignement pour la victoire
@@ -138,11 +140,11 @@ puts "*** % $ § % € MORPION € % § $ % *** " 			# titre du jeu
   end
 end
 
-  if tour_de_jeu == 10 
-    puts " TIE GAME"
+  if tour_de_jeu == 10 						# si tour de jeu et toujours pas de gagnant
+    puts " TIE GAME"						# afficher égalité
   else	
     if tour_de_jeu%2 == 0	
-      puts "#{player1.name} tu as gagné !".yellow			# si tour_de_jeu pair joueur 1 gagne
+      puts "#{player1.name} tu as gagné !".yellow		# si tour_de_jeu pair joueur 1 gagne
     else
       puts "#{player2.name} tu as gagné !".red			# si tour_de_jeu impair jouer 2 gagne
     end
@@ -161,8 +163,6 @@ print ">"
     puts "OOOUUUAAAIIISSS".white				# si réponse "y" recommencer					
   end
 end
-
-
 
 end
  
