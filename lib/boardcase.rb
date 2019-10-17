@@ -138,14 +138,14 @@ puts "*** % $ § % € MORPION € % § $ % *** " 			# titre du jeu
   end
 end
 
-  if tour_de_jeu == 9 
+  if tour_de_jeu == 10 
     puts " TIE GAME"
-  end
-	
-  if tour_de_jeu%2 == 0 	
-    puts "#{player1.name} tu as gagné !".yellow			# si tour_de_jeu pair joueur 1 gagne
-  else
-    puts "#{player2.name} tu as gagné !".red			# si tour_de_jeu impair jouer 2 gagne
+  else	
+    if tour_de_jeu%2 == 0	
+      puts "#{player1.name} tu as gagné !".yellow			# si tour_de_jeu pair joueur 1 gagne
+    else
+      puts "#{player2.name} tu as gagné !".red			# si tour_de_jeu impair jouer 2 gagne
+    end
   end
 
 puts "GAME".red+"-OVER".yellow
