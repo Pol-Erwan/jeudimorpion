@@ -6,73 +6,83 @@ class BoardCase
   def initialize
     #TO DO : doit régler sa valeur, ainsi que son numéro de case
   end
+
 morpion = []
+morpiontab = ["a1","a2","a3","b1","b2","b3","c1","c2","c3"]
+print morpiontab
+
 i = 0
 while i < 10
 	morpion [i] = " "
 	i = i + 1
 end
+
 j = 0
 while j < 9
-
-a1 = morpion[0]
-a2 = morpion[1]
-a3 = morpion[2]
-b1 = morpion[3]
-b2 = morpion[4]
-b3 = morpion[5]
-c1 = morpion[6]
-c2 = morpion[7]
-c3 = morpion[8]
-d4 = morpion[9]
-
-
-#morpion2 = [1,2,3,4,5,6,7,8,9]
 
 puts "    1   2   3".green
 puts "  +---+---+---+".green
 print "A | ".green
-print "#{a1}".red
+print "#{morpion[1]}".red
 print " | ".green
-print "#{a2}".red
+print "#{morpion[2]}".red
 print " | ".green
-print "#{a3}".red
+print "#{morpion[3]}".red
 puts " | ".green
 
 puts "  +---+---+---+".green
 print "B | ".green
-print "#{b1}".red
+print "#{morpion[4]}".red
 print " | ".green
-print "#{b2}".red
+print "#{morpion[5]}".red
 print " | ".green
-print "#{b3}".red
+print "#{morpion[6]}".red
 puts " | ".green
 
 puts "  +---+---+---+".green
 print "C | ".green
-print "#{c1}".red
+print "#{morpion[7]}".red
 print " | ".green
-print "#{c2}".red
+print "#{morpion[8]}".red
 print " | ".green
-print "#{c3}".red
+print "#{morpion[9]}".red
 puts " | ".green
 puts "  +---+---+---+".green
 
-puts " tour n°#{j} :0 ... 9 ?".yellow
-print ">"
-a = gets.chomp.to_i
 
-if morpion[a] == " "
+puts " " 
+puts "?????"
+aaa = gets.chomp
+puts ">"
+z = 1
 
-	if j%2 == 0 	
-		morpion [a] = "X" 
-	else
-		morpion [a] = "O"
-	end
-	j = j + 1
-else 
-	puts "occupé"
+morpiontab.each do |item|
+
+  if aaa != item
+	puts "NO"
+	z = z + 1
+  else
+	puts "gets.chomp = #{item} position = #{z}."
+	
+		if morpion[z] == " "
+
+			if j%2 == 0 	
+				morpion [z] = "X" 
+			else
+				morpion [z] = "O"
+			end
+			j = j + 1
+		else 
+			puts "occupé"
+		end
+
+  end
+
 end
+
+#puts " tour n°#{j} :0 ... 8 ?".yellow
+#print ">"
+#a = gets.chomp.to_i
 
 
 if j > 4 
